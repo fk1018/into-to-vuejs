@@ -4,9 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start":"http-server dish/",
-    "dev": "webpack --config webpack.config.js --environment development && http-server dist/",
-    "build": "webpack --config webpack.config.js --environment production",
+    "start": "npx http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,6 +17,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-vue": "^4.7.1",
+    "http-server": "^0.11.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2"
   },
