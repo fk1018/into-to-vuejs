@@ -4,7 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js && http-server dist/",
+    "start":"http-server dish/",
+    "dev": "webpack --config webpack.config.js --environment development && http-server dist/",
+    "build": "webpack --config webpack.config.js --environment production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
