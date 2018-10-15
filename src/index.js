@@ -5,7 +5,6 @@ const app = new Vue({
     brand: 'Vue Master',
     selectedVariant: 0,
     inventory: 100,
-    inStock: true,
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
     classObject: {
       activeClass: true,
@@ -16,11 +15,13 @@ const app = new Vue({
         variantId: 2234,
         variantColor: 'green',
         variantImage: './assets/green-socks.png',
+        variantQuantity: 0,
       },
       {
         variantId: 2235,
         variantColor: 'blue',
         variantImage: './assets/blue-socks.png',
+        variantQuantity: 10,
       },
     ],
     cart: 0,
@@ -31,6 +32,9 @@ const app = new Vue({
     },
     image() {
       return this.variants[this.selectedVariant].variantImage;
+    },
+    inStock() {
+      return this.variants[this.selectedVariant].variantQuantity;
     },
   },
   methods: {
