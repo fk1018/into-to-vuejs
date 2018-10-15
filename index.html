@@ -31,8 +31,11 @@
           <li v-for='detail in details'>{{detail}}</li>
         </ul>
 
-        <div v-for='variant in variants' :key=' variant.variantId'><!-- use key attribute to help vue keep track of the nodes -->
-          <p @mouseover='updateProduct(variant.variantImage)'>{{ variant.variantColor }}</p>
+        <div v-for='variant in variants' 
+          :key=' variant.variantId'
+          class='color-box'
+          :style='{ backgroundColor: variant.variantColor }'
+          @mouseover='updateProduct(variant.variantImage)'> <!-- use key attribute to help vue keep track of the nodes -->
         </div>
 
         <button @click='addToCart'>Add to Cart</button>
