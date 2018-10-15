@@ -35,7 +35,8 @@
           :key=' variant.variantId'
           class='color-box'
           :style='{ backgroundColor: variant.variantColor }'
-          @mouseover='updateProduct(variant.variantImage)'> <!-- use key attribute to help vue keep track of the nodes -->
+          @mouseover='updateProduct(variant.variantImage)'
+          :class='classObject'> <!-- use key attribute to help vue keep track of the nodes -->
         </div>
 
         <button 

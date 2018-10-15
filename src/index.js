@@ -6,6 +6,10 @@ const app = new Vue({
     inventory: 100,
     inStock: true,
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
+    classObject: {
+      activeClass: true,
+      errorClass: false,
+    },
     variants: [
       {
         variantId: 2234,
