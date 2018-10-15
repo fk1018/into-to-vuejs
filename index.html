@@ -32,10 +32,10 @@
         </ul>
 
         <div v-for='variant in variants' :key=' variant.variantId'><!-- use key attribute to help vue keep track of the nodes -->
-          <p>{{ variant.variantColor }}</p>
+          <p @mouseover='updateProduct(variant.variantImage)'>{{ variant.variantColor }}</p>
         </div>
 
-        <button v-on:click='addToCart'>Add to Cart</button>
+        <button @click='addToCart'>Add to Cart</button>
 
         <div class="cart">
           <p>Cart({{cart}})</p>
