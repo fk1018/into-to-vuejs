@@ -1,7 +1,8 @@
 const app = new Vue({
   el: '#app',
   data: {
-    product: 'Socks',
+    productType: 'Socks',
+    brand: 'Vue Master',
     image: './assets/green-socks.png',
     inventory: 100,
     inStock: true,
@@ -23,6 +24,11 @@ const app = new Vue({
       },
     ],
     cart: 0,
+  },
+  computed: {
+    title() {
+      return `${this.brand} ${this.productType}`;
+    },
   },
   methods: {
     addToCart() {
