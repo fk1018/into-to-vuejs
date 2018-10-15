@@ -31,12 +31,12 @@
           <li v-for='detail in details'>{{ detail }}</li>
         </ul>
 
-        <div v-for='variant in variants'
+        <div v-for='(variant, index) in variants'
           class='color-box'
           :key=' variant.variantId'
           :style='{ backgroundColor: variant.variantColor }'
           :class='classObject'
-          @mouseover='updateProduct(variant.variantImage)'> <!-- use key attribute to help vue keep track of the nodes -->
+          @mouseover='updateProduct(index)'> <!-- use key attribute to help vue keep track of the nodes -->
         </div>
 
         <button 

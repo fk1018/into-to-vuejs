@@ -3,7 +3,7 @@ const app = new Vue({
   data: {
     productType: 'Socks',
     brand: 'Vue Master',
-    image: './assets/green-socks.png',
+    selectedVariant: 0,
     inventory: 100,
     inStock: true,
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
@@ -29,13 +29,16 @@ const app = new Vue({
     title() {
       return `${this.brand} ${this.productType}`;
     },
+    image() {
+      return this.variants[this.selectedVariant].variantImage;
+    },
   },
   methods: {
     addToCart() {
       this.cart += 1;
     },
-    updateProduct(variantImage) {
-      this.image = variantImage;
+    updateProduct(index) {
+      this.selectedVariant = index;
     },
   },
 });
