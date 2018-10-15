@@ -87,8 +87,20 @@ Vue.component('product', {
           @click='addToCart'>Add to Cart
         </button>
 
+        <product-review></product-review>
       </div><!-- .product-info -->
     </div><!-- .product -->
+  `,
+});
+
+Vue.component('product-review', {
+  data() {
+    return {
+      name: null,
+    };
+  },
+  template: `
+    <input v-model='name'>
   `,
 });
 
