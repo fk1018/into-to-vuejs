@@ -31,18 +31,18 @@
           <li v-for='detail in details'>{{ detail }}</li>
         </ul>
 
-        <div v-for='variant in variants' 
-          :key=' variant.variantId'
+        <div v-for='variant in variants'
           class='color-box'
+          :key=' variant.variantId'
           :style='{ backgroundColor: variant.variantColor }'
-          @mouseover='updateProduct(variant.variantImage)'
-          :class='classObject'> <!-- use key attribute to help vue keep track of the nodes -->
+          :class='classObject'
+          @mouseover='updateProduct(variant.variantImage)'> <!-- use key attribute to help vue keep track of the nodes -->
         </div>
 
         <button 
-          @click='addToCart' 
           :disabled='!inStock'
-          :class='{disabledButton: !inStock}'>Add to Cart
+          :class='{disabledButton: !inStock}'
+          @click='addToCart'>Add to Cart
         </button>
 
         <div class="cart">
