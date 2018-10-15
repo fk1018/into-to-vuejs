@@ -43,6 +43,9 @@ Vue.component('product', {
     inStock() {
       return this.variants[this.selectedVariant].variantQuantity;
     },
+    shipping() {
+      return this.premium ? 'Free' : '2.99';
+    },
   },
   methods: {
     addToCart() {
@@ -64,7 +67,7 @@ Vue.component('product', {
         <p v-if='inventory > 10'>In Stock</p>
         <p v-else-if='inventory < 10 && inventory > 0'> Almost out of Stock</p>
         <p v-else>Out of Stock</p>
-        <p>User is premium: {{ premium }}</p>
+        <p>Shipping: {{ shipping }}</p>
 
         <ul>
           <li v-for='detail in details'>{{ detail }}</li>
