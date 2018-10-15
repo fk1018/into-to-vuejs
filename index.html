@@ -38,7 +38,11 @@
           @mouseover='updateProduct(variant.variantImage)'> <!-- use key attribute to help vue keep track of the nodes -->
         </div>
 
-        <button @click='addToCart'>Add to Cart</button>
+        <button 
+          @click='addToCart' 
+          :disabled='!inStock'
+          :class='{disabledButton: !inStock}'>Add to Cart
+        </button>
 
         <div class="cart">
           <p>Cart({{cart}})</p>
